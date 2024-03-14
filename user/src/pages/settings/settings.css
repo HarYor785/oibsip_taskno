@@ -1,0 +1,110 @@
+.settings__container{
+    position: relative;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1rem;
+}
+
+.settings__left,
+.settings__right{
+    padding: 1rem;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.settings__profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.settings__profile-img{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.settings__profile-name{
+    font-size: var(--fs-normal);
+    color: var(--dark-color);
+}
+
+.settings__profile-list{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.settings__profile-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.settings__profile-icon{
+    color: var(--secondary-color);
+}
+
+.settings__profile-span{
+    font-size: var(--fs-small);
+}
+
+.settings__right-title{
+    font-size: var(--fs-normal);
+}
+
+.settings__right-form{
+    position: relative;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings__right-form_items{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(49%, 1fr));
+    gap: 0.5rem;
+}
+
+.settings__right-form_field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.1rem;
+}
+
+.settings__right-form_label{
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+}
+
+.settings__right-form_input{
+    width: 100%;
+    padding: 0.4rem;
+    font-size: var(--fs-small);
+    background-color: transparent;
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.settings__right-form_input:focus{
+    border: 1px solid var(--secondary-color);
+}
+
+.settings__right-form_span{
+    font-size: var(--fs-smaller);
+    color: rgb(223, 0, 0);
+}
+
+.settings__right-form_button{
+    margin-top: 0.85rem;
+    align-self: flex-end;
+}

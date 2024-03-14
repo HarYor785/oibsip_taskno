@@ -1,0 +1,387 @@
+.create__pizza{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    animation-name: cart;
+    animation-duration: 0.5s forwards;
+    transition: 0.3s forwards;
+}
+
+@keyframes cart {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.create__pizza-overlay{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.create__pizza-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.create__pizza-content{
+    width: 450px;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.create__pizza-title{
+    font-size: var(--fs-large);
+    font-weight: var(--fw-bolder);
+}
+
+.create__pizza-progress{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.create__pizza-progress_count{
+    padding: 0.1rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bolder);
+    background-color: blue;
+    color: #fff;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+}
+
+.create__pizza-progress_count:last-child{
+    transition: all .3s ease-in-out;
+    background-color: rgb(185, 185, 185);
+}
+
+.create__pizza-progress_bar{
+    position: relative;
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    padding: 0.2rem;
+    background-color: rgb(185, 185, 185);
+}
+
+.create__pizza-progress_bar::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+}
+
+.create__pizza-progress_bar.active::before{
+    width: 100%;
+    background-color: blue;
+}
+
+.create__pizza-progress_bar.active + .create__pizza-progress_count{
+    background-color: blue;
+    transition: all .5s ease-in-out;
+}
+
+.create__pizza-subtitle{
+    font-size: var(--fs-smaller);
+    color: var(--gray-color);
+}
+
+.create__pizza-subtext{
+    font-size: var(--fs-small);
+    color: var(--dark-color);
+    font-weight: var(--fw-bold);
+}
+
+.create__pizza-form{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.create__pizza-form_items{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.3rem;
+    position: absolute;
+    opacity: 0;
+    animation-name: itemTab;
+    animation-duration: .4s;
+    transition: .4s forwards;
+    z-index: -1;
+}
+
+.create__pizza-form_items.active{
+    position: relative;
+    opacity: 1;
+    margin-left: 0;
+    animation-name: itemTab;
+    animation-duration: .4s;
+    transition: .4s forwards;
+    z-index: 1;
+}
+
+@keyframes itemTab {
+    from{
+        margin-right: -100%;
+        opacity: 0;
+    }
+    to{
+        margin-right: 0;
+        opacity: 1;
+    }
+}
+
+.create__pizza-form_items.create__pizza-form_items.flex{
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.create__pizza_btn{
+    width: 100%;
+}
+
+.create__pizza-form_label{
+    font-size: var(--fs-normal);
+    color: var(--gray-color);
+    font-weight: var(--fw-bold);
+}
+
+.create__pizza-form_list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.5rem;
+}
+
+.create__pizza-form_items.grid .create__pizza-form_list,
+.create__pizza-form_items.grid .create__pizza-form_list{
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+
+.create__pizza-form_field{
+    padding: 0.85rem 0.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fs-smaller);
+    background-color: var(--white-color);
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.create__pizza-form_field:hover{
+    scale: 1.1;
+}
+
+.create__pizza-form-radio{
+    display: none;
+}
+
+.create__pizza-form_field span{
+    font-size: var(--fs-small);
+}
+
+#radio1:checked + .create__pizza-form_field,
+#crust_radio1:checked + .create__pizza-form_field,
+#sauce_radio1:checked + .create__pizza-form_field,
+#cheese_radio1:checked + .create__pizza-form_field,
+#veggies_radio1:checked + .create__pizza-form_field{
+    border: 2px solid var(--secondary-color);
+}
+#radio1:checked + .create__pizza-form_field span,
+#crust_radio1:checked + .create__pizza-form_field span,
+#sauce_radio1:checked + .create__pizza-form_field span,
+#cheese_radio1:checked + .create__pizza-form_field span,
+#veggies_radio1:checked + .create__pizza-form_field span{
+    font-weight: var(--fw-bold);
+}
+#radio1:checked + .create__pizza-form_field span:last-child,
+#crust_radio1:checked + .create__pizza-form_field span:last-child,
+#sauce_radio1:checked + .create__pizza-form_field span:last-child,
+#cheese_radio1:checked + .create__pizza-form_field span:last-child,
+#veggies_radio1:checked + .create__pizza-form_field span:last-child{
+    color: var(--secondary-color);
+}
+
+#radio2:checked + .create__pizza-form_field,
+#crust_radio2:checked + .create__pizza-form_field,
+#sauce_radio2:checked + .create__pizza-form_field,
+#cheese_radio2:checked + .create__pizza-form_field,
+#veggies_radio2:checked + .create__pizza-form_field{
+    border: 2px solid var(--secondary-color);
+}
+#radio2:checked + .create__pizza-form_field span,
+#crust_radio2:checked + .create__pizza-form_field span,
+#sauce_radio2:checked + .create__pizza-form_field span,
+#cheese_radio2:checked + .create__pizza-form_field span,
+#veggies_radio2:checked + .create__pizza-form_field span{
+    font-weight: var(--fw-bold);
+}
+#radio2:checked + .create__pizza-form_field span:last-child,
+#crust_radio2:checked + .create__pizza-form_field span:last-child,
+#sauce_radio2:checked + .create__pizza-form_field span:last-child,
+#cheese_radio2:checked + .create__pizza-form_field span:last-child,
+#veggies_radio2:checked + .create__pizza-form_field span:last-child{
+    color: var(--secondary-color);
+}
+
+#radio3:checked + .create__pizza-form_field,
+#crust_radio3:checked + .create__pizza-form_field,
+#sauce_radio3:checked + .create__pizza-form_field,
+#cheese_radio3:checked + .create__pizza-form_field,
+#veggies_radio3:checked + .create__pizza-form_field{
+    border: 2px solid var(--secondary-color);
+}
+#radio3:checked + .create__pizza-form_field span,
+#crust_radio3:checked + .create__pizza-form_field span,
+#sauce_radio3:checked + .create__pizza-form_field span,
+#cheese_radio3:checked + .create__pizza-form_field span,
+#veggies_radio3:checked + .create__pizza-form_field span{
+    font-weight: var(--fw-bold);
+}
+#radio3:checked + .create__pizza-form_field span:last-child,
+#crust_radio3:checked + .create__pizza-form_field span:last-child,
+#sauce_radio3:checked + .create__pizza-form_field span:last-child,
+#cheese_radio3:checked + .create__pizza-form_field span:last-child,
+#veggies_radio3:checked + .create__pizza-form_field span:last-child{
+    color: var(--secondary-color);
+}
+
+#radio4:checked + .create__pizza-form_field,
+#crust_radio4:checked + .create__pizza-form_field,
+#sauce_radio4:checked + .create__pizza-form_field,
+#cheese_radio4:checked + .create__pizza-form_field,
+#veggies_radio4:checked + .create__pizza-form_field{
+    border: 2px solid var(--secondary-color);
+}
+#radio4:checked + .create__pizza-form_field span,
+#crust_radio4:checked + .create__pizza-form_field span,
+#sauce_radio4:checked + .create__pizza-form_field span,
+#cheese_radio4:checked + .create__pizza-form_field span,
+#veggies_radio4:checked + .create__pizza-form_field span{
+    font-weight: var(--fw-bold);
+}
+#radio4:checked + .create__pizza-form_field span:last-child,
+#crust_radio4:checked + .create__pizza-form_field span:last-child,
+#sauce_radio4:checked + .create__pizza-form_field span:last-child,
+#cheese_radio4:checked + .create__pizza-form_field span:last-child,
+#veggies_radio4:checked + .create__pizza-form_field span:last-child{
+    color: var(--secondary-color);
+}
+
+#crust_radio5:checked + .create__pizza-form_field,
+#sauce_radio5:checked + .create__pizza-form_field,
+#cheese_radio5:checked + .create__pizza-form_field,
+#veggies_radio5:checked + .create__pizza-form_field{
+    border: 2px solid var(--secondary-color);
+}
+#crust_radio5:checked + .create__pizza-form_field span,
+#sauce_radio5:checked + .create__pizza-form_field span,
+#cheese_radio5:checked + .create__pizza-form_field span,
+#veggies_radio5:checked + .create__pizza-form_field span{
+    font-weight: var(--fw-bold);
+}
+#crust_radio5:checked + .create__pizza-form_field span:last-child,
+#sauce_radio5:checked + .create__pizza-form_field span:last-child,
+#cheese_radio5:checked + .create__pizza-form_field span:last-child,
+#veggies_radio5:checked + .create__pizza-form_field span:last-child{
+    color: var(--secondary-color);
+}
+
+.create__pizza_submit-btn{
+    width: 100%;
+    padding: 0.5rem 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(29,30,39);
+    border-radius: 8px;
+    border: none;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.create__pizza_submit-title{
+    font-size: var(--fs-normal);
+    font-weight: var(--fw-extral-bold);
+    color: var(--secondary-color);
+}
+
+.create__pizza_submit-div{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.create__pizza_submit-div span{
+    font-size: var(--fs-normal);
+    color: #fff;
+    font-weight: var(--fw-bolder);
+}
+
+.create__pizza_submit-img{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .create__pizza-container{
+        width: 350px;
+        margin: 1rem;
+    }
+}

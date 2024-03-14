@@ -1,0 +1,106 @@
+.orders__container{
+    position: relative;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.orders__cards{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.orders__card{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--primary-color);
+}
+
+.orders__card-icon{
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: var(--white-color);
+    box-shadow: 0 4px 8px var(--primary-color);
+}
+
+.orders__card:nth-child(1) .orders__card-icon{
+    background-color: #00e700;
+}
+
+.orders__card:nth-child(2) .orders__card-icon{
+    background-color: #1877f2;
+}
+
+.orders__card:nth-child(3) .orders__card-icon{
+    background-color: #ffb400;
+}
+
+.orders__card:nth-child(4) .orders__card-icon{
+    background-color: #ff6e40;
+}
+
+.orders__card-item{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.orders__card-title{
+    font-size: var(--fs-normal);
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.orders__card-value{
+    font-size: var(--fs-medium);
+    color: var(--white-color);
+}
+
+.orders__table{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.table__action{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.table__action-popover{
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s forwards;
+}
+
+.table__action-popover.active{
+    max-height: 200px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.table__action-popover_btn{
+    padding: 0.5rem;
+    background: transparent;
+}

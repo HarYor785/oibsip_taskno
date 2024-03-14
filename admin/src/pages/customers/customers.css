@@ -1,0 +1,8 @@
+.customers__container{
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.customers__table{
+    width: 100%;
+}

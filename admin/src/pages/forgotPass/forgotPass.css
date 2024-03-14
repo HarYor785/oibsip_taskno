@@ -1,0 +1,88 @@
+.forgot__password{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot__password__container{
+    padding: 1rem;
+    width: 400px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-shadow: 0 4px 10px var(--primary-color);
+}
+
+.forgot__password__title{
+    font-size: var(--fs-larger);
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.forgot__password_subtitle{
+    font-size: var(--fs-small);
+    color: #fff;
+}
+
+.forgot__password__form{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.forgot__password__items{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.4rem;
+}
+
+.forgot__password__label{
+    font-size: var(--fs-normal);
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    font-weight: var(--fw-bold);
+}
+
+.forgot__password__input{
+    width: 100%;
+    padding: 0.7rem;
+    font-size: var(--fs-small);
+    color: var(--white-color);
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    border-radius: 6px;
+}
+
+.forgot__password__link{
+    font-size: var(--fs-small);
+    color: var(--secondary-color);
+}
+
+.forgot__password__error{
+    font-size: var(--fs-small);
+    color: rgb(218, 0, 0);
+}
+
+.forgot__password__btn{
+    align-self: flex-end;
+}
+
+
+
+/* BREAK POINT @590px */
+@media screen and (max-width: 590px) {
+    .forgot__password__container{
+        width: 300px;
+    }
+}

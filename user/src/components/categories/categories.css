@@ -1,0 +1,36 @@
+.categories{
+    position: relative;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+}
+
+.categories__card{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.categories__card:hover .categories__img{
+    transform: scale(1.1);
+}
+
+.categories__img{
+    width: 5rem;
+    height: 100%;
+    object-fit: cover;
+    transition: .3s;
+}
+
+.categories__text{
+    font-size: var(--fs-normal);
+    color: var(--dark-color);
+}

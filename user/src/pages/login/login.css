@@ -1,0 +1,114 @@
+.login{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../assets/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 450px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.login__container-heading{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.3rem;
+}
+
+.login__container-title{
+    font-size: var(--fs-large);
+    color: var(--white-color);
+}
+
+.login__container-subtitle{
+    font-size: var(--fs-small);
+    color: var(--gray-color);
+}
+
+.login__form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.login__form-field{
+    width: 100%;
+    margin-top: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.login__form-label{
+    font-size: var(--fs-small);
+    text-transform: uppercase;
+    font-weight: var(--fw-medium);
+    color: var(--white-color);
+}
+
+.login__form-input{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--gray-color);
+    background-color: transparent;
+    border-radius: 5px;
+    font-size: var(--fs-small);
+    transition: .2s;
+}
+
+.login__form-input:focus{
+    border: 1px solid var(--secondary-color);
+}
+
+.login__form-error{
+    font-size: var(--fs-smaller);
+    color: rgb(211, 0, 0);
+}
+
+.login__form-acc{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--fs-small);
+    margin-top: 1rem;
+}
+
+.login__form-btn{
+    margin-top: 1rem;
+    align-self: flex-end;
+}
+
+
+/* MEDIA BREAK POINT */
+
+@media screen and (max-width: 768px) {
+    .login__container{
+        margin: 1rem 0;
+        gap: 1rem;
+        width: 400px;
+    }
+}
+
+
+@media screen and (max-width: 560px) {
+    .login__container{
+        width: 350px;
+    }
+}
